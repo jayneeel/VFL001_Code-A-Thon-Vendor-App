@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "171072040834",
+    "firebase_url": "https://vendorly-app-default-rtdb.firebaseio.com",
+    "project_id": "vendorly-app",
+    "storage_bucket": "vendorly-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171072040834:android:b82b4fcf722da8a86e299b",
+        "android_client_info": {
+          "package_name": "com.example.vendorlyuserapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171072040834-1dhaisicpaaefkknabe8826dl01lj2vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMaa_gGtSVK2lYfjKGsaUZ3MAlJ5BxQzc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171072040834-1dhaisicpaaefkknabe8826dl01lj2vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171072040834:android:a4f4a80e6c2cac9b6e299b",
+        "android_client_info": {
+          "package_name": "com.example.vendorlyvendorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171072040834-1dhaisicpaaefkknabe8826dl01lj2vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMaa_gGtSVK2lYfjKGsaUZ3MAlJ5BxQzc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171072040834-1dhaisicpaaefkknabe8826dl01lj2vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

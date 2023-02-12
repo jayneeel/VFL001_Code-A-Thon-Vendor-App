@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Navigation">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/nav_img" />
+
+    <LinearLayout
+        android:layout_width="1.5in"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0.7in">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I'm A new Vendor"
+            android:fontFamily="@font/nunito"
+            android:backgroundTint="#237821"
+            android:onClick="nxtRegister"
+            android:id="@+id/btnRegister"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="─────── OR ───────"
+            android:textSize="15sp"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/nunito"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="I have my account"
+            android:backgroundTint="#125AD5"
+            android:fontFamily="@font/nunito"
+            android:onClick="nxtLogin"
+            android:id="@+id/btnLogin"/>
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
