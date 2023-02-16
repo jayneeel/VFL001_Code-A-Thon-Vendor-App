@@ -5,11 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Homepage">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PRODUCT DETAILS"
+        android:textAlignment="center"
+        android:fontFamily="@font/nunito"
+        android:textStyle="bold"
+        android:background="#304FFE"
+        android:textColor="@color/white"
+        android:padding="10dp"
+        android:id="@+id/header"
+        android:letterSpacing="0.2"/>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/header"
         android:id="@+id/recycle"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

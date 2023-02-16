@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    app:cardElevation="0dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 <RelativeLayout
     android:layout_width="match_parent"
@@ -22,7 +23,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/nameTxt"
         android:text="This is Demo Text"
-
+        android:fontFamily="@font/nunito"
         android:textStyle="bold"
         android:textSize="25sp"
         android:textColor="#000"
@@ -37,9 +38,35 @@
         android:text="This is email"
         android:textSize="25sp"
         android:textColor="#000"
+        android:fontFamily="@font/nunito"
         android:layout_toRightOf="@id/img1"
         android:layout_below="@+id/nameTxt"
         android:layout_marginLeft="10dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceTxt"
+        android:layout_alignEnd="@id/priceTxt"
+        android:padding="10dp"
+        android:id="@+id/editBtn"
+        app:srcCompat="@android:drawable/ic_menu_edit" />
+
+    <ImageView
+        android:id="@+id/delBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/priceTxt"
+        android:layout_toRightOf="@id/img1"
+        android:padding="10dp"
+        app:srcCompat="@android:drawable/ic_menu_close_clear_cancel" />
+    <com.google.android.material.divider.MaterialDivider
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/delBtn"/>
+
+
 
 </RelativeLayout>
 </androidx.cardview.widget.CardView>

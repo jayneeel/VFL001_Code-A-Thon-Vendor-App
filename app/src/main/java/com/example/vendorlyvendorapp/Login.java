@@ -14,11 +14,13 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     Button btnLog;
     TextInputLayout email,pass;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +37,14 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String getEmail=email.getEditText().getText().toString();
                 String pwd=pass.getEditText().getText().toString();
-                Toast.makeText(Login.this, getEmail+"  -  "+pwd, Toast.LENGTH_SHORT).show();
                 firebaseAuth.signInWithEmailAndPassword(getEmail,pwd)
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
+                                String uid = firebaseAuth.getCurrentUser().getUid();
                                 Toast.makeText(Login.this, "Login Successful!", Toast.LENGTH_SHORT).show();
                                 Intent it = new Intent(Login.this, Homepage.class);
-                                it.putExtra("itemDetails","");
+                                it.putExtra("uid",uid);
                                 startActivity(it);
                             }
                         })

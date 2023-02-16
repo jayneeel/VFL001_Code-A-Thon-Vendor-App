@@ -4,40 +4,69 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".AddData">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="1.7in"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:orientation="vertical"
         android:layout_centerInParent="true">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Name"
-            android:id="@+id/name"
-            android:fontFamily="@font/nunito"/>
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Enter Product Name"
+            android:id="@+id/name_add"
+            android:layout_marginBottom="3dp">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Price"
-            android:id="@+id/price"
-            android:fontFamily="@font/nunito"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Image URL"
-            android:id="@+id/imgurl"
-            android:fontFamily="@font/nunito"/>
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Enter Product Price"
+            android:id="@+id/price_add"
+            android:layout_marginVertical="20dp"
+            android:layout_marginBottom="3dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito"
+                android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Image"
+            android:outlineAmbientShadowColor="#9AEC66"
+            android:layout_marginVertical="20dp"
+            android:textColor="#11E167"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito"
+            android:id="@+id/imgUrl"/>
+
+        <Button
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add Product"
+            android:outlineAmbientShadowColor="#9AEC66"
+            android:layout_marginVertical="20dp"
+            android:textColor="#11E167"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito"
             android:id="@+id/btnAdd"/>
 
 

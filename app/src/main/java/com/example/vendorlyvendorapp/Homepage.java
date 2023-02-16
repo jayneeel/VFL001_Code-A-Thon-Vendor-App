@@ -21,11 +21,12 @@ FloatingActionButton floatingActionButton;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
         getSupportActionBar().hide();
+        String UID = getIntent().getStringExtra("uid");
         recyclerView = findViewById(R.id.recycle);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Products"), model.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("VendorsTemp").child(UID).child("Products"), model.class)
                         .build();
 
         adapter=new myAdapter(options);

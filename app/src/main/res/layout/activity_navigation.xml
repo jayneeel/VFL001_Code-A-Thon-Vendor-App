@@ -14,7 +14,7 @@
         android:src="@drawable/nav_img" />
 
     <LinearLayout
-        android:layout_width="1.5in"
+        android:layout_width="1.7in"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
@@ -35,7 +35,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="─────── OR ───────"
+            android:text="───── OR ─────"
             android:textSize="15sp"
             android:layout_marginVertical="10dp"
             android:fontFamily="@font/nunito"/>

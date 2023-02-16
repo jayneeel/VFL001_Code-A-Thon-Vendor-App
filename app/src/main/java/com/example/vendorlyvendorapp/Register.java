@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
@@ -57,31 +59,19 @@ public class Register extends AppCompatActivity {
                 String getAddr = addr.getEditText().getText().toString();
                 String getPass = pass.getEditText().getText().toString();
                 String getArea = autoCompleteTextView.getText().toString();
-                Map<String,Object> map = new HashMap<>();
-                map.put("shop_name",getShopname);
-                map.put("prop_name",getPropname);
-                map.put("email",getEmail);
-                map.put("phno",getphno);
-                map.put("area",getArea);
-                map.put("addr",getAddr);
-                FirebaseDatabase.getInstance().getReference().child("Vendors").push().setValue(map)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void unused) {
-                                        Toast.makeText(Register.this, "Business Account Created", Toast.LENGTH_SHORT).show();
-
-                                    }
-                                })
-                                        .addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(Register.this, "Failed", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
                 firebaseAuth.createUserWithEmailAndPassword(getEmail, getPass)
                         .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                             @Override
                             public void onSuccess(AuthResult authResult) {
+                                FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
+                                String uid = firebaseUser.getUid().toString();
+                                DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("VendorsTemp").child(uid).child("Details");
+                                ref.child("shopname").setValue(getShopname);
+                                ref.child("propname").setValue(getPropname);
+                                ref.child("email").setValue(getEmail);
+                                ref.child("phone").setValue(getphno);
+                                ref.child("area").setValue(getArea);
+                                ref.child("address").setValue(getAddr);
                                 Toast.makeText(Register.this, "User Account Created", Toast.LENGTH_SHORT).show();
                                 Intent it = new Intent(Register.this, Login.class);
                                 startActivity(it);
@@ -93,6 +83,50 @@ public class Register extends AppCompatActivity {
                                 Toast.makeText(Register.this, "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });
+
+
+
+
+
+
+
+
+//                Map<String,Object> map = new HashMap<>();
+//                map.put("shop_name",getShopname);
+//                map.put("prop_name",getPropname);
+//                map.put("email",getEmail);
+//                map.put("phno",getphno);
+//                map.put("area",getArea);
+//                map.put("addr",getAddr);
+//                FirebaseDatabase.getInstance().getReference().child("Vendors").push().setValue(map)
+//                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                                    @Override
+//                                    public void onSuccess(Void unused) {
+//                                        Toast.makeText(Register.this, "Business Account Created", Toast.LENGTH_SHORT).show();
+//
+//                                    }
+//                                })
+//                                        .addOnFailureListener(new OnFailureListener() {
+//                                            @Override
+//                                            public void onFailure(@NonNull Exception e) {
+//                                                Toast.makeText(Register.this, "Failed", Toast.LENGTH_SHORT).show();
+//                                            }
+//                                        });
+//                firebaseAuth.createUserWithEmailAndPassword(getEmail, getPass)
+//                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+//                            @Override
+//                            public void onSuccess(AuthResult authResult) {
+//                                Toast.makeText(Register.this, "User Account Created", Toast.LENGTH_SHORT).show();
+//                                Intent it = new Intent(Register.this, Login.class);
+//                                startActivity(it);
+//                            }
+//                        })
+//                        .addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                Toast.makeText(Register.this, "Failed " + e.getMessage(), Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
 
             }
         });
